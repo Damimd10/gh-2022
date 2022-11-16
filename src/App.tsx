@@ -1,4 +1,5 @@
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
+import ReactGA from 'react-ga';
 // import * as htmlToImage from 'html-to-image';
 
 import PartialNomination from './components/PartialNomination';
@@ -12,6 +13,11 @@ import 'semantic-ui-css/semantic.min.css';
 
 function App() {
   const domElement = useRef(null);
+
+  useEffect(() => {
+    ReactGA.initialize('UA-166054317-1');
+    ReactGA.pageview('Home');
+  }, []);
 
   const currentPlayer = usePlayersStore(getSelectedPlayer);
   const activeClass = currentPlayer ? 'layout sidebar' : 'layout';
