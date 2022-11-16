@@ -6,9 +6,9 @@ export const getSelectedPlayer = (state: PlayerState) =>
   state.players.find(({ id }) => id === state.selected);
 
 export const getVotes = (state: PlayerState) => {
-  const byFirstVote = groupBy((currentPlayer: PlayerInterface) => currentPlayer.firstVote);
+  const byFirstVote = groupBy((currentPlayer: any) => currentPlayer.firstVote);
 
-  const bySecondVote = groupBy((currentPlayer: PlayerInterface) => currentPlayer.secondVote);
+  const bySecondVote = groupBy((currentPlayer: any) => currentPlayer.secondVote);
 
   const firstVotes = byFirstVote(state.players);
   const secondVotes = bySecondVote(state.players);

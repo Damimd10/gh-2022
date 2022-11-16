@@ -20,7 +20,7 @@ function Player({ onSelect, onRemoveVote, player, playerList }: Props) {
     onRemoveVote(player.id, id);
   };
 
-  const getNominatedPlayer = (votedId: number | undefined) => {
+  const getNominatedPlayer = (votedId: number | null | undefined) => {
     if (!votedId) return null;
 
     const votedPlayer = playerList.find(({ id }) => id === votedId);

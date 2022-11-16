@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import * as htmlToImage from 'html-to-image';
+// import * as htmlToImage from 'html-to-image';
 
 import PartialNomination from './components/PartialNomination';
 import PlayerList from './components/PlayerList';
@@ -16,7 +16,7 @@ function App() {
   const currentPlayer = usePlayersStore(getSelectedPlayer);
   const activeClass = currentPlayer ? 'layout sidebar' : 'layout';
 
-  const testing = async () => {
+  /* const testing = async () => {
     if (!domElement.current) return;
 
     const dataUrl = await htmlToImage.toPng(domElement.current);
@@ -25,7 +25,7 @@ function App() {
     link.download = 'html-to-image.png';
     link.href = dataUrl;
     link.click();
-  };
+  }; */
 
   return (
     <div ref={domElement}>
