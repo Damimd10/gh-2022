@@ -6,7 +6,7 @@ import agustinAvatar from '~/assets/images/agustin.jpg';
 import alexisAvatar from '~/assets/images/alexis.jpg';
 import constanzaAvatar from '~/assets/images/constanza.jpg';
 import danielaAvatar from '~/assets/images/daniela.jpg';
-import juanAvatar from '~/assets/images/juan.jpg';
+// import juanAvatar from '~/assets/images/juan.jpg';
 import julianaAvatar from '~/assets/images/juliana.jpg';
 import julietaAvatar from '~/assets/images/julieta.jpg';
 import lucilaAvatar from '~/assets/images/lucila.jpg';
@@ -23,7 +23,7 @@ const PLAYERS: Player[] = [
   { id: 2, name: 'Alexis', avatar: alexisAvatar },
   { id: 3, name: 'Constanza', avatar: constanzaAvatar },
   { id: 4, name: 'Daniela', avatar: danielaAvatar },
-  { id: 5, name: 'Juan', avatar: juanAvatar },
+  // { id: 5, name: 'Juan', avatar: juanAvatar },
   { id: 6, name: 'Juliana', avatar: julianaAvatar },
   { id: 7, name: 'Julieta', avatar: julietaAvatar },
   { id: 8, name: 'Lucila', avatar: lucilaAvatar },
