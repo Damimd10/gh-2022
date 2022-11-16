@@ -1,7 +1,41 @@
-import Hello from '~/components/Hello';
+import { useRef } from 'react';
+import * as htmlToImage from 'html-to-image';
+
+import PartialNomination from './components/PartialNomination';
+import PlayerList from './components/PlayerList';
+import Sidebar from './components/Sidebar';
+
+import usePlayersStore from './store/players';
+import { getSelectedPlayer } from './store/selectors';
+
+import 'semantic-ui-css/semantic.min.css';
 
 function App() {
-  return <Hello />;
+  const domElement = useRef(null);
+
+  const currentPlayer = usePlayersStore(getSelectedPlayer);
+  const activeClass = currentPlayer ? 'layout sidebar' : 'layout';
+
+  const testing = async () => {
+    if (!domElement.current) return;
+
+    const dataUrl = await htmlToImage.toPng(domElement.current);
+    const link = document.createElement('a');
+
+    link.download = 'html-to-image.png';
+    link.href = dataUrl;
+    link.click();
+  };
+
+  return (
+    <div ref={domElement}>
+      <div className={activeClass}>
+        <PlayerList />
+        {currentPlayer && <Sidebar player={currentPlayer} />}
+      </div>
+      <PartialNomination />
+    </div>
+  );
 }
 
 export default App;
